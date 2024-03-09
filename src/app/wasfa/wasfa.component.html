@@ -1,0 +1,24 @@
+<app-hero mainTitle="وصفات رمضان 2024" imgUrl="assets/imgs/dbara.jpg">
+</app-hero>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-4" *ngFor="let meal of meals">
+            <div class="meal-card">
+                <div class="meal-container">
+                    <h2>{{ meal.name }}</h2>
+
+                    <div class="meal-photo-container">
+                        <a *ngIf="!meal.showVideo && meal.photoUrl" [href]="meal.videoUrl">
+                            <img [src]="meal.photoUrl" alt="Meal Photo" (click)="toggleVideo(meal)">
+                            <br>
+                            <p>{{ meal.description }}</p>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
